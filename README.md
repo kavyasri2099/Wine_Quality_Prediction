@@ -1,55 +1,52 @@
 # Wine_Quality_Prediction  
+
+`Project Overview``
+This project focuses on performing exploratory data analysis (EDA) and applying machine learning algorithms to classify wine type (red or white) and predict wine quality based on its physicochemical properties.  
   
-`Overview`:  
-This project aims to predict the quality of wine using a variety of machine learning algorithms. The dataset used contains several chemical properties of wine and their respective quality ratings.  
+`Table of Contents`  
+- Dataset  
+- Exploratory Data Analysis (EDA)  
+- Data Preprocessing    
+- Model Training and Evaluation  
+- Results  
+- Conclusion  
   
-`Data Preprocessing`:  
-`Data Imputation`: Missing values were handled using the K-Nearest Neighbors (KNN) imputer. The number of neighbors was chosen as the square root of the number of data points.  
-`Feature Scaling`: RobustScaler was used for data transformation to handle outliers effectively.  
-`Feature Selection`: Important features were identified using a Decision Tree classifier, and visualized using a bar plot of feature importances.  
+`Dataset`  
+The dataset consists of red and white variants of the Portuguese "Vinho Verde" wine, including various physicochemical properties and sensory quality ratings.  
   
-`Modeling`  
-Several machine learning models were trained and evaluated:  
-  
-- K-Nearest Neighbors (KNN):  
-Used with distance weighting and Minkowski metric.  
-- Decision Tree:  
-Built with a maximum depth of 3 and Gini impurity as the criterion.  
-- Logistic Regression:  
-Employed with a maximum iteration of 1000.  
-- Gaussian Naive Bayes:  
-Applied for probabilistic classification.  
-- Random Forest:  
-Utilized as an ensemble learning method.  
-- Handling Imbalanced Data  
-`ADASYN`: Adaptive Synthetic Sampling was used to handle class imbalance by generating synthetic samples for the minority class.  
-  
-`Evaluation Metrics`  
-The models were evaluated based on the following metrics:  
-  
-`Accuracy`: Proportion of correctly predicted instances.  
-`Precision`: Ratio of true positive predictions to the total predicted positives.  
-`Recall`: Ratio of true positive predictions to all actual positives.  
-`F1-Score`: Harmonic mean of precision and recall.  
-  
-`Visualization`  
-- Box Plots: Visualized the distribution of numerical features.  
-- Feature Importances: Displayed the importance of features using a bar plot.  
-- Performance Metrics: Bar plot comparing accuracy, precision, recall, and F1-score of different models.  
-- Quality Distribution: Histogram showing the distribution of wine quality ratings.  
-    
-`Results`  
-The Random Forest classifier achieved the highest performance across most metrics, with an accuracy of approximately 98.2%.  
-  
-`Key Features`  
-The most influential features in predicting wine quality were identified as:  
-  
-- Alcohol  
-- pH  
-- Residual Sugar  
-- Chlorides  
-- Sulphates  
-- Total Sulfur Dioxide  
-    
+`Exploratory Data Analysis (EDA)`  
+- Distribution Analysis: Examined the distribution and statistical properties of the data.  
+- Missing Values: Identified and handled missing values.  
+- Outliers: Detected and managed outliers.  
+- Visualization: Visualized relationships between features and target variables.  
+`Data Preprocessing`  
+- Missing Values: Filled missing values using median values of respective columns.  
+- Outliers: Handled outliers by clipping them based on wine type.  
+- Normalization/Scaling: Applied normalization/scaling to features for model training.  
+`Model Training and Evaluation`  
+`Classification Models`  
+- Algorithms: Logistic Regression, SVM, Decision Tree, Random Forest, KNN, Gaussian Naive Bayes  
+- Metrics: Accuracy, Precision, Recall, F1-score  
+`Regression Models`  
+- Algorithms: Linear Regression, Huber Regressor, RANSAC Regressor, Theil-Sen Regressor, Decision Tree Regressor, Random Forest Regressor, SVR, KNN Regressor  
+- Metrics: Mean Squared Error (MSE), Root Mean Squared Error (RMSE)  
+`Results`    
+`Classification Results`  
+- Logistic Regression: Accuracy: 97.69%, Precision: 97.84%, Recall: 99.06%, F1-score: 98.45%  
+- SVM: Accuracy: 92.62%, Precision: 92.26%, Recall: 98.23%, F1-score: 95.15%  
+- Decision Tree: Accuracy: 98.38%, Precision: 98.96%, Recall: 98.85%, F1-score: 98.90%  
+- Random Forest: Accuracy: 99.62%, Precision: 99.58%, Recall: 99.90%, F1-score: 99.74%  
+- KNN: Accuracy: 95.62%, Precision: 96.69%, Recall: 97.39%, F1-score: 97.04%  
+- Gaussian Naive Bayes: Accuracy: 97.15%, Precision: 98.94%, Recall: 97.18%, F1-score: 98.05%  
+`Regression Results`  
+- Linear Regression: MSE: 0.5300, RMSE: 0.7280  
+- Huber Regressor: MSE: 0.5373, RMSE: 0.7330  
+- RANSAC Regressor: MSE: 0.7293, RMSE: 0.8540  
+- Theil-Sen Regressor: MSE: 0.5428, RMSE: 0.7368  
+- Decision Tree Regressor: MSE: 0.7069, RMSE: 0.8408  
+- Random Forest Regressor: MSE: 0.3704, RMSE: 0.6086  
+- SVR: MSE: 0.6099, RMSE: 0.7809  
+- KNN Regressor: MSE: 0.6318, RMSE: 0.7948  
 `Conclusion`  
-This project demonstrates the application of various machine learning techniques for wine quality prediction. The results indicate that ensemble methods like Random Forests can provide robust and accurate predictions. The analysis also highlights the importance of handling missing values, scaling data, and addressing class imbalance for improving model performance.  
+The Random Forest classifier and Random Forest Regressor were the top performers for wine type classification and quality prediction, respectively, demonstrating the highest accuracy and the lowest error rates.  
+
